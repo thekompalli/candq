@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 // Import team member images and background
 import feiyangImg from '../assets/feiyang.jpg';
 import isabelleImg from '../assets/Isabelle.jpg';
@@ -7,6 +7,13 @@ import meImg from '../assets/me.JPG';
 import satvikImg from '../assets/satvik.jpg';
 import sreemanthImg from '../assets/sreemanth.jpg';
 import blueBg from '../assets/blue.png';
+import cherryBg from '../assets/cherry.png';
+import greenBg from '../assets/green.png';
+import goldBg from '../assets/gold.png';
+import sunnyBg from '../assets/sunny.png';
+import navyBg from '../assets/navy.png';
+import pinkBg from '../assets/pink.png';
+import bluelBg from '../assets/bluel.png';
 
 const TeamPage = () => {
   // Team members with their roles
@@ -14,37 +21,47 @@ const TeamPage = () => {
     { 
       id: 1, 
       name: "Krishna Kompalli", 
-      role: "Community Manager", 
+      role: "Community & IT Manager", 
       avatar: meImg,
-      bgColor: "bg-blue-100"
+      bgColor: "bg-blue-100",
+      specialBg: cherryBg,
+      linkedin: "https://www.linkedin.com/in/krishna-kompalli/"
     },
     { 
       id: 2, 
       name: "Feiyang XU", 
-      role: "Content Creator", 
+      role: "Student Ambassador & Advisor", 
       avatar: feiyangImg,
-      bgColor: "bg-croissant-light" 
+      bgColor: "bg-croissant-light",
+      specialBg: greenBg,
+      linkedin: "https://www.linkedin.com/in/feiyang-xu-3b6150326/"
     },
     { 
       id: 3, 
       name: "Hangjing Xie", 
-      role: "Student Ambassador", 
+      role: "Podcast Host & Producer", 
       avatar: isabelleImg,
-      bgColor: "bg-purple-100"
+      bgColor: "bg-purple-100",
+      specialBg: sunnyBg,
+      linkedin: "https://www.linkedin.com/in/hangjing-xie-isabelle/"
     },
     { 
       id: 4, 
-      name: "Sreemanth", 
-      role: "Technical Support", 
+      name: "Sreemanth Kothari", 
+      role: "Technical Support & Operations", 
       avatar: sreemanthImg,
-      bgColor: "bg-green-100"
+      bgColor: "bg-green-100",
+      specialBg: pinkBg,
+      linkedin: "https://www.linkedin.com/in/sreemanth-kothari-742018234/"
     },
     { 
       id: 5, 
-      name: "Satvik Reddy", 
-      role: "Podcast Host", 
+      name: "Satvik Reddy Tambuluru", 
+      role: "Content & Media Creator", 
       avatar: satvikImg,
-      bgColor: "bg-red-100"
+      bgColor: "bg-red-100",
+      specialBg: goldBg,
+      linkedin: "https://www.linkedin.com/in/satvik-reddy-t/"
     }
   ];
 
@@ -80,14 +97,23 @@ const TeamPage = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">The dream team</h2>
             <p className="text-lg text-navy-light max-w-2xl mx-auto">
-              We have spent years building communities, creating content, and helping students
-              navigate French bureaucracy, academia, and culture.
+              <i>"Many hands make light work—especially when they're holding croissants." </i>
+
+              We're five EMLyon Business School students who turn community-building, content-crafting, and decoding French red tape into a team sport.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {teamMembers.map((member) => (
-              <div key={member.id} className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+              <div 
+                key={member.id} 
+                className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center"
+                style={{
+                  backgroundImage: `url(${member.specialBg})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              >
                 <div className="relative w-40 h-40 mb-4">
                   <div className={`absolute ${member.bgColor} w-32 h-32 rounded-full top-4 left-4`}></div>
                   <img 
@@ -99,14 +125,13 @@ const TeamPage = () => {
                 <h3 className="text-xl font-bold text-navy">{member.name}</h3>
                 <p className="text-navy-light mb-4">{member.role}</p>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-navy hover:text-croissant transition-colors">
-                    <Facebook size={18} />
-                  </a>
-                  <a href="#" className="text-navy hover:text-croissant transition-colors">
-                    <Twitter size={18} />
-                  </a>
-                  <a href="#" className="text-navy hover:text-croissant transition-colors">
-                    <Instagram size={18} />
+                  <a 
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    className="text-navy hover:text-croissant transition-colors"
+                  >
+                    <Linkedin size={20} />
                   </a>
                 </div>
               </div>
