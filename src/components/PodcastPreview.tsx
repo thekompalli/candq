@@ -18,8 +18,8 @@ const PodcastPreview = () => {
     {
       id: "ep45",
       title: "Healthcare Access for International Students",
-      guest: "Yet to decide",
-      role: "(Student Health Advisor)",
+      guest: "",
+      role: "",
       date: "Late May, 2025"
     }
   ];
@@ -58,10 +58,10 @@ const PodcastPreview = () => {
                   <span className="bg-croissant-light text-croissant-dark text-sm font-medium px-3 py-1 rounded-full">Latest Episode</span>
                 </div>
                 <h3 className="text-2xl font-bold text-navy mb-2">{latestEpisode.title}</h3>
-                <div className="mb-4">
+{/*                 <div className="mb-4">
                   <p className="text-navy font-medium">with {latestEpisode.guest}</p>
                   <p className="text-navy-light">{latestEpisode.role}</p>
-                </div>
+                </div> */}
                 <p className="text-navy-light mb-4">{latestEpisode.description}</p>
                 <div className="flex items-center text-navy-light mb-4">
                   <Clock className="h-4 w-4 mr-1" />
@@ -90,7 +90,7 @@ const PodcastPreview = () => {
                 {upcomingEpisodes.map((episode, index) => (
                   <div key={episode.id} className={`pb-4 ${index < upcomingEpisodes.length - 1 ? 'border-b border-gray-200' : ''}`}>
                     <h4 className="text-navy font-medium mb-1">{episode.title}</h4>
-                    <p className="text-navy-light text-sm mb-1">with {episode.guest}, {episode.role}</p>
+{/*                     <p className="text-navy-light text-sm mb-1">with {episode.guest}, {episode.role}</p> */}
                     <div className="flex items-center text-sm text-navy-light">
                       <Calendar className="h-3 w-3 mr-1" />
                       <span>{episode.date}</span>
