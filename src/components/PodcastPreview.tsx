@@ -16,25 +16,11 @@ const PodcastPreview = () => {
 
   const upcomingEpisodes = [
     {
-      id: "ep44",
-      title: "Finding Affordable Housing in Paris",
-      guest: "Jean Dupont",
-      role: "Housing Specialist",
-      date: "May 8, 2025"
-    },
-    {
       id: "ep45",
       title: "Healthcare Access for International Students",
-      guest: "Dr. Camille Lefèvre",
-      role: "International Student Health Advisor",
-      date: "May 15, 2025"
-    },
-    {
-      id: "ep46",
-      title: "Building Your Career Network in France",
-      guest: "Alexandre Lambert",
-      role: "Career Coach",
-      date: "May 22, 2025"
+      guest: "Yet to decide",
+      role: "(Student Health Advisor)",
+      date: "Late May, 2025"
     }
   ];
 
